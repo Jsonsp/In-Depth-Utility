@@ -1,14 +1,12 @@
 package launch.app;
+
 import java.awt.Color;
 import java.awt.GridBagLayout;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-
 import menu.buffer.BufferPanel;
 import menu.main.MainMenu;
-
 
 public class LaunchApp 
 {
@@ -46,12 +44,10 @@ public class LaunchApp
 		frame.setVisible(true);
 	}
 	
-
 	private static void setBarName()
 	{
 		System.setProperty("apple.laf.useScreenMenuBar", "true");
-		System.setProperty("com.apple.mrj.application.apple.menu.about.name", progName); // set the name on stat bar
+		System.setProperty("com.apple.mrj.application.apple.menu.about.name", progName);
 		
 	}
-
 }
