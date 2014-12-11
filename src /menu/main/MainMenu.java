@@ -2,14 +2,19 @@ package menu.main;
 
 import menu.buffer.BufferPanel;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Line2D;
 import java.awt.LayoutManager;
 
 import javax.swing.BorderFactory;
@@ -18,13 +23,18 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
-
 public class MainMenu extends JPanel
 {
-	public static final int Window_Height = 500;
 	public static final int Window_Width = 700;
+	public static final int Window_Height = 500;
+	public static final int btnLn1 = 50;
+	public static final int btnLn2 = 150;
+	public static final int btnLn3 = 250;
+	public static final int leftRow = -75;
+	public static final int rightRow = 125;
+	public static final int btnWidth = 150;
+	public static final int btnHeight = 50;
 	private BufferPanel bufferPanel;
-
 	private static JLabel mainTittleLbl;
 	private static JLabel companyNameLbl;
 	private JButton personalBtn; 
@@ -55,26 +65,29 @@ public class MainMenu extends JPanel
 		personalBtn = new JButton("Personal Menu");
 		schoolBtn = new JButton ("School Menu");
 		computerBtn = new JButton ("Computer Menu");
-		settingsBtn = new JButton ("Settigns Manu");
+		settingsBtn = new JButton ("Settings Menu");
 		aboutBtn = new JButton ("About IDU");
+		
+		createMainTittleLable();
+		createBottomLabel();
+		createPersonalButton();
+		createSchoolButton();
+		createComputerButton();
+		createSettingsButton();
+		createAboutMenu ();
+		mainTittleLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		companyNameLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 	public void layoutComponents() 
 	{	
-		GridBagConstraints gbc = new GridBagConstraints();
-		
-		setLayout(new GridBagLayout());
-		
-		setPreferredSize(new Dimension(Window_Width,Window_Height));
-		
-		gbc.gridx = 0;
-		gbc.gridy = 0;
-		add(mainTittleLbl,gbc);
-		
-		add(companyNameLbl,gbc);
-		
+		setLayout(null);
+		setPreferredSize(new Dimension(Window_Width,Window_Height-20));//-20 to set JPanel same as JFrame
+
+		add(mainTittleLbl);
+		add(companyNameLbl);
 		add(personalBtn);
-		add(schoolBtn);
+        add(schoolBtn);
 		add(computerBtn);
 		add(settingsBtn);
 		add(aboutBtn);
@@ -129,47 +142,51 @@ public class MainMenu extends JPanel
 		
 	}
 	
-	public void createPersonalBtn()
-	{
-		int x = (Window_Height)/2-85;
-		personalBtn.setBounds(x,50,150,50 );
-	}
-	
-	public void createSchoolBtn()
-	{
-		int x = (Window_Height)/2+125;
-		schoolBtn.setBounds(x,50,150,50 );
-	}
-	
-	public void createComputerBtn()
-	{
-		int x = (Window_Height)/2-85;
-	    computerBtn.setBounds(x,150,150,50 );
-	}
-	
-	public void createSettingsBtn()
-	{
-		int x = (Window_Height)/2+125;
-	    settingsBtn.setBounds(x,150,150,50 );
-	}
-	
-	public void createAboutBtn ()
-	{
-		int x = (Window_Height)/2+20;
-	    aboutBtn.setBounds(x,250,150,50 );
-	}
-	
-	public static void  CreateMainTittleLable()
+	public static void  createMainTittleLable() 
 	{
 		mainTittleLbl.setFont(new Font("Helvetica Neue",Font.PLAIN,30));
-	    int x = (int) (Window_Height) / 2-25;
-	    mainTittleLbl.setBounds(x, 5, 1000,40);
+	    int x = (int) (Window_Height) / 2;
+	    mainTittleLbl.setBounds(x, 5, 200,40);
 	}
 
-	public static void  CreateBottomLabel()
+	public static void  createBottomLabel()
 	{
 		companyNameLbl.setFont(new Font("Helvetica Neue",Font.PLAIN,12));
-	    int y = (int) (Window_Height) / 2+55;
-	    companyNameLbl.setBounds(480, y, 1000,40);
+	    int y = (int) (Window_Width)/2+85;
+	    companyNameLbl.setBounds(480, y,225,40);
+	}
+	public void createPersonalButton()
+	{   
+		int x = (Window_Height)/2+leftRow;;
+		personalBtn.setBounds(x,btnLn1,btnWidth,btnHeight);
+		personalBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+	}
+	
+	public void createSchoolButton()
+	{
+		int x = (Window_Height)/2+rightRow;
+		schoolBtn.setBounds(x,btnLn1,btnWidth,btnHeight);
+		schoolBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+	}
+	
+	public void createComputerButton()
+	{
+		int x = (Window_Height)/2+leftRow;
+	    computerBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
+	    computerBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+	}
+	
+	public void createSettingsButton()
+	{
+		int x = (Window_Height)/2+rightRow;
+	    settingsBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
+	    settingsBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+	}
+	
+	public void createAboutMenu ()
+	{
+		int x = (Window_Height)/2+25;
+	    aboutBtn.setBounds(x,btnLn3,btnWidth,btnHeight);
+	    aboutBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 }

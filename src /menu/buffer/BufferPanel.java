@@ -1,5 +1,6 @@
 package menu.buffer;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -17,7 +18,7 @@ public class BufferPanel extends JPanel
 	
 	public void initialize()
 	{
-		setLayout(new GridBagLayout());
+		//setLayout(new BorderLayout());
 		createComponents();
 		layoutComponents();
 		setDefaults();
@@ -36,7 +37,6 @@ public class BufferPanel extends JPanel
 		add(mainMenu);
 	}
 
-	// Set defaults
 	public void setDefaults()
 	{
 		showMainPanel();
