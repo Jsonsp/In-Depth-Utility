@@ -34,6 +34,7 @@ public class MainMenu extends JPanel
 	public static final int rightRow = 125;
 	public static final int btnWidth = 150;
 	public static final int btnHeight = 50;
+	public static final int btnPadding = 25;
 	private BufferPanel bufferPanel;
 	private static JLabel mainTittleLbl;
 	private static JLabel companyNameLbl;
@@ -75,8 +76,8 @@ public class MainMenu extends JPanel
 		createComputerButton();
 		createSettingsButton();
 		createAboutMenu ();
-		mainTittleLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		companyNameLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		//mainTittleLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		//companyNameLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 	public void layoutComponents() 
@@ -186,7 +187,7 @@ public class MainMenu extends JPanel
 	
 	public void createAboutMenu ()
 	{
-		int x = (Window_Height)/2+25;
+		int x = (Window_Height)/2+btnPadding;
 	    aboutBtn.setBounds(x,btnLn3,btnWidth,btnHeight);
 	    //aboutBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}

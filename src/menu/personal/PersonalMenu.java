@@ -24,13 +24,14 @@ public class PersonalMenu extends JPanel
 	public static final int rightRow = 125;
 	public static final int btnWidth = 150;
 	public static final int btnHeight = 50;
+	public static final int btnPadding = 25;
 	private BufferPanel bufferPanel;
 	private static JLabel mainTittleLbl;
 	private static JLabel companyNameLbl;
 	private JButton notesBtn;
 	private JButton reminderBtn;
 	private JButton calendarBtn;
-	private JButton safariBtn;
+	private JButton mailBtn;
 	private JButton returnBtn;
 	
 	public PersonalMenu (BufferPanel bufferPanel)
@@ -57,7 +58,7 @@ public class PersonalMenu extends JPanel
 		add(notesBtn);
         add(reminderBtn);
 		add(calendarBtn);
-		add(safariBtn);
+		add(mailBtn);
 		add(returnBtn);
 	}
 	
@@ -68,7 +69,7 @@ public class PersonalMenu extends JPanel
 		notesBtn = new JButton("Notes");
 		reminderBtn = new JButton("Reminders");
 		calendarBtn = new JButton ("Calendar");
-		safariBtn = new JButton ("Safari");
+		mailBtn = new JButton ("Mail");
 		returnBtn = new JButton ("Return");
 		
 		createMainTittleLable();
@@ -77,10 +78,10 @@ public class PersonalMenu extends JPanel
 		createNotesButton();
 		createRemindersButton();
 		createCalendarButton();
-		createSafariButton();
+		createMailButton();
 		createReturnMenu ();
-		mainTittleLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		companyNameLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		//mainTittleLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		//companyNameLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 	public void addListeners()
@@ -99,7 +100,7 @@ public class PersonalMenu extends JPanel
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				System.out.println("");
+				System.out.println("reminderBtn");
 			}
 		});
 		
@@ -108,16 +109,16 @@ public class PersonalMenu extends JPanel
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				System.out.println("");
+				System.out.println("calendarBtn");
 			}
 		});
 		
-		safariBtn.addActionListener(new ActionListener()
+		mailBtn.addActionListener(new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				System.out.println("");
+				System.out.println("mailBtn");
 			}
 		});
 		
@@ -137,7 +138,7 @@ public class PersonalMenu extends JPanel
 	{
 		mainTittleLbl.setFont(new Font("Helvetica Neue",Font.PLAIN,30));
 	    int x = (int) (Window_Height) / 2;
-	    mainTittleLbl.setBounds(x, 5, 270,40);
+	    mainTittleLbl.setBounds(x, 5, 210,40);
 	}
 
 	public static void  createBottomLabel()
@@ -151,35 +152,35 @@ public class PersonalMenu extends JPanel
 	{   
 		int x = (Window_Height)/2+leftRow;;
 		notesBtn.setBounds(x,btnLn1,btnWidth,btnHeight);
-		notesBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		//notesBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 	public void createRemindersButton()
 	{
 		int x = (Window_Height)/2+rightRow;
 		reminderBtn.setBounds(x,btnLn1,btnWidth,btnHeight);
-		reminderBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		//reminderBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 	public void createCalendarButton()
 	{
 		int x = (Window_Height)/2+leftRow;
 	    calendarBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
-	    calendarBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+	    //calendarBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
-	public void createSafariButton()
+	public void createMailButton()
 	{
 		int x = (Window_Height)/2+rightRow;
-	    safariBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
-	    safariBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		mailBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
+	    //safariBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 	public void createReturnMenu ()
 	{
-		int x = (Window_Height)/2+25;
+		int x = (Window_Height)/2+btnPadding;
 	    returnBtn.setBounds(x,btnLn3,btnWidth,btnHeight);
-	    returnBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+	    //returnBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 }

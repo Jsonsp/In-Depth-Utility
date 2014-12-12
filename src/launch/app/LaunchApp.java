@@ -37,7 +37,7 @@ public class LaunchApp
 
 		final JFrame frame = new JFrame(progName); 
 		frame.setSize(Window_Width, Window_Height); 
-		frame.setBackground(new Color(70,250,150));
+		frame.setBackground(new Color(70,250,150)); //clear 0x33
 		//frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		

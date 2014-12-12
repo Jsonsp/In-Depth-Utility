@@ -63,5 +63,4 @@ public class BufferPanel extends JPanel
 		JPanel panelToShow = mapPanels.get(panelName);
 		panelToShow.setVisible(true);
 	}
-	
 }
