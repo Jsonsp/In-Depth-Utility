@@ -101,6 +101,7 @@ public class MainMenu extends JPanel
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				System.out.println("PersonalBtn");
+				bufferPanel.showPanel("PERSONAL_MENU");
 			}
 		});
 		
@@ -159,34 +160,34 @@ public class MainMenu extends JPanel
 	{   
 		int x = (Window_Height)/2+leftRow;;
 		personalBtn.setBounds(x,btnLn1,btnWidth,btnHeight);
-		personalBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		//personalBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 	public void createSchoolButton()
 	{
 		int x = (Window_Height)/2+rightRow;
 		schoolBtn.setBounds(x,btnLn1,btnWidth,btnHeight);
-		schoolBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		//schoolBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 	public void createComputerButton()
 	{
 		int x = (Window_Height)/2+leftRow;
 	    computerBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
-	    computerBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+	    //computerBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 	public void createSettingsButton()
 	{
 		int x = (Window_Height)/2+rightRow;
 	    settingsBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
-	    settingsBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+	    //settingsBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
 	public void createAboutMenu ()
 	{
 		int x = (Window_Height)/2+25;
 	    aboutBtn.setBounds(x,btnLn3,btnWidth,btnHeight);
-	    aboutBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+	    //aboutBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 }
