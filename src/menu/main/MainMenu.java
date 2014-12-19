@@ -149,6 +149,7 @@ public class MainMenu extends JPanel
 		mainTittleLbl.setFont(new Font("Helvetica Neue",Font.PLAIN,30));
 	    int x = (int) (Window_Height) / 2;
 	    mainTittleLbl.setBounds(x, 5, 200,40);
+	    //mainTittleLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 
 	public static void  createBottomLabel()
@@ -161,6 +162,10 @@ public class MainMenu extends JPanel
 	{   
 		int x = (Window_Height)/2+leftRow;;
 		personalBtn.setBounds(x,btnLn1,btnWidth,btnHeight);
+		personalBtn.setFont(new Font("Helvetica Neue",Font.PLAIN,14));
+		//personalBtn.setOpaque(false);
+		//personalBtn.setContentAreaFilled(false);
+		//personalBtn.setBorderPainted(false);
 		//personalBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
@@ -168,6 +173,7 @@ public class MainMenu extends JPanel
 	{
 		int x = (Window_Height)/2+rightRow;
 		schoolBtn.setBounds(x,btnLn1,btnWidth,btnHeight);
+		schoolBtn.setFont(new Font("Helvetica Neue",Font.PLAIN,14));
 		//schoolBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
@@ -175,6 +181,7 @@ public class MainMenu extends JPanel
 	{
 		int x = (Window_Height)/2+leftRow;
 	    computerBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
+	    computerBtn.setFont(new Font("Helvetica Neue",Font.PLAIN,14));
 	    //computerBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
@@ -182,6 +189,7 @@ public class MainMenu extends JPanel
 	{
 		int x = (Window_Height)/2+rightRow;
 	    settingsBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
+	    settingsBtn.setFont(new Font("Helvetica Neue",Font.PLAIN,14));
 	    //settingsBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
@@ -189,6 +197,7 @@ public class MainMenu extends JPanel
 	{
 		int x = (Window_Height)/2+btnPadding;
 	    aboutBtn.setBounds(x,btnLn3,btnWidth,btnHeight);
+	    aboutBtn.setFont(new Font("Helvetica Neue",Font.PLAIN,16));
 	    //aboutBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 }

@@ -48,6 +48,27 @@ public class PersonalMenu extends JPanel
 		setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
+	public void createComponents() 
+	{
+		mainTittleLbl = new JLabel("Personal Menu");
+		companyNameLbl = new JLabel("Created By Appended Karma Inc. 2014©");
+		notesBtn = new JButton("Notes");
+		reminderBtn = new JButton("Reminders");
+		calendarBtn = new JButton ("Calendar");
+		mailBtn = new JButton ("Mail");
+		returnBtn = new JButton ("Return");
+		
+		createMainTittleLable();
+		createBottomLabel();
+		createNotesButton();
+		createRemindersButton();
+		createCalendarButton();
+		createMailButton();
+		createReturnMenu ();
+		//mainTittleLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		//companyNameLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+	}
+	
 	public void layoutComponents() 
 	{	
 		setLayout(null);
@@ -62,28 +83,6 @@ public class PersonalMenu extends JPanel
 		add(returnBtn);
 	}
 	
-	public void createComponents() 
-	{
-		mainTittleLbl = new JLabel("Personal Menu");
-		companyNameLbl = new JLabel("Created By Appended Karma Inc. 2014©");
-		notesBtn = new JButton("Notes");
-		reminderBtn = new JButton("Reminders");
-		calendarBtn = new JButton ("Calendar");
-		mailBtn = new JButton ("Mail");
-		returnBtn = new JButton ("Return");
-		
-		createMainTittleLable();
-		createBottomLabel();
-		
-		createNotesButton();
-		createRemindersButton();
-		createCalendarButton();
-		createMailButton();
-		createReturnMenu ();
-		//mainTittleLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		//companyNameLbl.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-	}
-	
 	public void addListeners()
 	{
 		notesBtn.addActionListener(new ActionListener() 
@@ -92,6 +91,7 @@ public class PersonalMenu extends JPanel
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				System.out.println("notesBtn");
+				bufferPanel.showPanel("PERSONAL_NOTES");
 			}
 		});
 		
@@ -152,6 +152,7 @@ public class PersonalMenu extends JPanel
 	{   
 		int x = (Window_Height)/2+leftRow;;
 		notesBtn.setBounds(x,btnLn1,btnWidth,btnHeight);
+		notesBtn.setFont(new Font("Helvetica Neue",Font.PLAIN,14));
 		//notesBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
@@ -159,6 +160,7 @@ public class PersonalMenu extends JPanel
 	{
 		int x = (Window_Height)/2+rightRow;
 		reminderBtn.setBounds(x,btnLn1,btnWidth,btnHeight);
+		reminderBtn.setFont(new Font("Helvetica Neue",Font.PLAIN,14));
 		//reminderBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
@@ -166,6 +168,7 @@ public class PersonalMenu extends JPanel
 	{
 		int x = (Window_Height)/2+leftRow;
 	    calendarBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
+	    calendarBtn.setFont(new Font("Helvetica Neue",Font.PLAIN,14));
 	    //calendarBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
@@ -173,6 +176,7 @@ public class PersonalMenu extends JPanel
 	{
 		int x = (Window_Height)/2+rightRow;
 		mailBtn.setBounds(x,btnLn2,btnWidth,btnHeight);
+		mailBtn.setFont(new Font("Helvetica Neue",Font.PLAIN,14));
 	    //safariBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	
@@ -180,6 +184,7 @@ public class PersonalMenu extends JPanel
 	{
 		int x = (Window_Height)/2+btnPadding;
 	    returnBtn.setBounds(x,btnLn3,btnWidth,btnHeight);
+	    returnBtn.setFont(new Font("Helvetica Neue",Font.PLAIN,16));
 	    //returnBtn.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 	}
 	

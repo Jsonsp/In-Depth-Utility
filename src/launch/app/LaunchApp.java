@@ -1,5 +1,6 @@
 package launch.app;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagLayout;
 
 import javax.swing.ImageIcon;
@@ -39,6 +40,7 @@ public class LaunchApp
 		frame.setSize(Window_Width, Window_Height); 
 		frame.setBackground(new Color(70,250,150)); //clear 0x33
 		//frame.setResizable(false);
+		frame.setMinimumSize(new Dimension(Window_Width,Window_Height));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
 		bufferPanel.initialize();
